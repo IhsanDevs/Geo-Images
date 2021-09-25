@@ -1,6 +1,14 @@
 <?php
 /*
+Using this function, you can scan
+geo location from images. You can
+also using the official website
+in https://tool.geoimgr.com. Thanks
+to https://github.com/rasitech-sudo
+for your request😃.
 
+
+Source: https://github.com/IhsanDevs
 */
 function Scan($path, $isArray = false)
     {
@@ -25,4 +33,13 @@ function Scan($path, $isArray = false)
         return $isArray ? json_decode($response) : $response;
     }
     curl_close($ch);
+}
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
 }
